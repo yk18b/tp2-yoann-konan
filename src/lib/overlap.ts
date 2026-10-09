@@ -8,5 +8,5 @@ export function overlaps(aStart: string, aEnd: string, bStart: string, bEnd: str
   const a2 = Date.parse(aEnd);
   const b1 = Date.parse(bStart);
   const b2 = Date.parse(bEnd);
-  return a1 <= b2 && b1 <= a2;
+  return a1 < b2 && b1 < a2;
 }

@@ -1,14 +1,14 @@
 import tseslint from "typescript-eslint";
 
-// Mise en place du lint — ticket INFRA-212.
-// Le parser TypeScript est branche, les regles seront choisies avec l'equipe.
-export default [
+// Lint arme : regles recommandees de typescript-eslint (INFRA-212).
+export default tseslint.config(
+  ...tseslint.configs.recommended,
   {
     files: ["src/**/*.ts", "test/**/*.ts"],
-    languageOptions: {
-      parser: tseslint.parser,
-      parserOptions: { ecmaVersion: "latest", sourceType: "module" }
-    },
-    rules: {}
+    rules: {
+      "@typescript-eslint/ban-ts-comment": "error",
+      // Un parametre prefixe par _ est volontairement inutilise (ex. test/store.spec.ts).
+      "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_", varsIgnorePattern: "^_" }]
+    }
   }
-];
+);
