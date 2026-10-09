@@ -1,3 +1,4 @@
+
 # DIAGNOSTIC — salles-api
 
 Binôme : Yoann Konan, <nom2>
@@ -153,12 +154,14 @@ Tâche donnée telle quelle : « Ajoute un endpoint GET /rooms/:id/availability?
 
 Protocole : session OpenCode neuve ; `DIAGNOSTIC.md` et les notes de l'agent sortis du dossier pendant la relance pour qu'il ne puisse pas s'en servir ; même tâche mot pour mot ; même réponse neutre aux questions.
 
+
+
 | | Avant | Après |
 |---|---|---|
-| Qui travaille | l'agent principal seul | <ex. architect → planner → dev → reviewer> |
-| Relecture | aucune | <conclusion du reviewer> |
-| Hook post-écriture | jamais vu | <affiché ou non> |
-| Tests exécutés | 3 fichiers sur 5, 4 ignorés | <résultat de npm run test:unit> |
-| Endpoint | <réponse du curl avant> | <réponse du curl après> |
+| Qui travaille | l'agent principal seul (subagents « Model not found ») | la chaîne : au minimum le planner (plan écrit dans `.opencode/plans/rooms-availability.md`), <autres agents vus> |
+| Relecture | aucune | <conclusion du reviewer, ou « non observée »> |
+| Hook | pre-commit jamais exécuté | pre-commit husky exécuté à chaque commit (typecheck + lint + tests) |
+| Tests exécutés | 3 fichiers sur 5, 4 tests ignorés, 2 bugs cachés | 5 fichiers sur 5, 30 réussis, 1 ignoré volontairement (fixture absente, INFRA-198) |
+| Endpoint | répond, écrit par l'agent principal seul, sans relecture | `{"roomId":"salle-a","date":"2026-11-03","freeSlots":[{"startsAt":"2026-11-03T00:00:00.000Z","endsAt":"2026-11-04T00:00:00.000Z"}]}` |
 
-Captures : `ex1-*.png` (avant), `apres-01-delegations.png`, `apres-02-hook.png`, `apres-03-reviewer.png`, `apres-04-filet.png`, `apres-05-curl.png` (après).
+Note : un premier `curl` a renvoyé « Cannot GET » parce qu'un serveur démarré avant la relance tournait encore avec l'ancien code ; après arrêt (`fuser -k 3000/tcp`) et redémarrage, l'endpoint répond.
