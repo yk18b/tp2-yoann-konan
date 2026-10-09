@@ -1,7 +1,7 @@
 ---
 description: Implement one bounded step of a plan, with the project's checks green. The only agent allowed to change code.
 mode: subagent
-model: opencode/deepseek-v4-pro
+model: opencode/deepseek-v4.1-flash
 temperature: 0.1
 color: success
 permission:

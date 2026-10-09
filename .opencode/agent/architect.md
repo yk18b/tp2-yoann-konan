@@ -1,7 +1,7 @@
 ---
 description: Orchestrator. Owns the goal, delegates every sub-task to a specialist subagent, verifies the result. Never writes code.
 mode: primary
-model: opencode/deepseek-v4-pro
+model: opencode/deepseek-v4.1-flash
 temperature: 0.2
 color: primary
 permission:

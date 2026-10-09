@@ -1,7 +1,7 @@
 ---
 description: Understand code. Reads a subsystem deeply and returns a short, grounded brief on how it actually works.
 mode: subagent
-model: opencode/deepseek-v4-flash
+model: opencode/deepseek-v4.1-flash
 temperature: 0.2
 color: info
 permission:

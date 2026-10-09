@@ -1,7 +1,7 @@
 ---
 description: Reviews a diff and fixes what it finds. Leaves the branch in a mergeable state.
 mode: subagent
-model: opencode/deepseek-v4-pro
+model: opencode/deepseek-v4.1-flash
 temperature: 0.2
 color: error
 permission:

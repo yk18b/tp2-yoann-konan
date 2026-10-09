@@ -1,7 +1,7 @@
 ---
 description: Turn a goal into a written, reviewable, step-by-step implementation plan on disk. Never implements.
 mode: primary
-model: opencode/deepseek-v4-pro
+model: opencode/deepseek-v4.1-flash
 temperature: 0.3
 color: warning
 permission:

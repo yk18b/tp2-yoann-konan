@@ -1,7 +1,7 @@
 ---
 description: Run the real app and try to break it, like a user would. Reports reproducible failures, never fixes them.
 mode: subagent
-model: opencode/deepseek-v4-flash
+model: opencode/deepseek-v4.1-flash
 temperature: 0.3
 color: error
 permission:
