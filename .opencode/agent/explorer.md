@@ -12,7 +12,9 @@ permission:
   list: allow
   lsp: allow
   webfetch: allow
-  edit: allow
+  edit:
+    "*": deny
+    ".opencode/plans/*-notes.md": allow
   task: deny
   bash:
     "*": deny
@@ -22,7 +24,6 @@ permission:
     "git blame*": allow
     "ls*": allow
     "find *": allow
-    "curl*": allow
 ---
 
 You are in explorer mode.

@@ -1,5 +1,5 @@
 ---
-description: Reviews a diff and fixes what it finds. Leaves the branch in a mergeable state.
+description: Reviews a diff against the plan and the repo conventions, and reports what it finds. Never edits code.
 mode: subagent
 model: opencode/deepseek-v4.1-flash
 temperature: 0.2
@@ -11,7 +11,7 @@ permission:
   grep: allow
   list: allow
   lsp: allow
-  edit: allow
+  edit: deny
   task: deny
   webfetch: deny
   bash:

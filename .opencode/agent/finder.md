@@ -5,6 +5,7 @@ model: opencode/deepseek-v4.1-flash
 temperature: 0.1
 color: info
 permission:
+  "*": deny
   read: allow
   glob: allow
   grep: allow
@@ -12,7 +13,6 @@ permission:
   edit: deny
   task: deny
   webfetch: deny
-  "*": deny
 ---
 
 You are in finder mode.
