@@ -7,9 +7,9 @@
     "salles-db": {
       "type": "remote",
       "url": "https://mcp.internal.salles.lan/db",
-      "enabled": true,
+      "enabled": false,
       "headers": {
-        "Authorization": "Bearer ${SALLES_MCP_TOKEN}"
+        "Authorization": "Bearer {env:SALLES_MCP_TOKEN}"
       }
     },
     "github": {
@@ -19,7 +19,7 @@
         "-y",
         "@modelcontextprotocol/server-github"
       ],
-      "enabled": true
+      "enabled": false
     },
     "notion": {
       "type": "local",
@@ -28,7 +28,7 @@
         "-y",
         "@notionhq/notion-mcp-server"
       ],
-      "enabled": true
+      "enabled": false
     },
     "slack": {
       "type": "local",
@@ -37,12 +37,12 @@
         "-y",
         "@modelcontextprotocol/server-slack"
       ],
-      "enabled": true
+      "enabled": false
     },
     "sentry": {
       "type": "remote",
       "url": "https://mcp.sentry.dev/mcp",
-      "enabled": true
+      "enabled": false
     },
     "playwright": {
       "type": "local",
@@ -51,7 +51,7 @@
         "-y",
         "@playwright/mcp@latest"
       ],
-      "enabled": true
+      "enabled": false
     }
   }
 }

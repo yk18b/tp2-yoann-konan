@@ -1,10 +1,10 @@
 # Conventions locales — src/lib/
 
-Ces modules sont consommes par les routes et par les scripts de facturation.
+Ces modules sont consommes par les routes.
 
-- **Un `export default` par module**, qui expose la fonction principale. Les exports
-  nommes secondaires sont tolares mais le default est obligatoire : c'est ce qui permet
-  aux scripts de facturation de charger un module par son chemin.
-- Pas de JSDoc ici : ces fonctions sont courtes et leur nom suffit. La doc vit dans le
-  ticket.
+- **Exports nommes** : chaque module expose ses fonctions par des exports nommes. Les
+  anciens scripts de facturation qui exigeaient un `export default` ne sont plus dans le
+  depot (price.ts en a ete repris, ticket FACT-88).
+- La JSDoc est bienvenue quand elle precise un contrat (ex. bornes [debut, fin[ dans
+  overlap.ts).
 - Les fonctions de ce dossier sont pures. Aucun acces reseau, aucun acces disque.

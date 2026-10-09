@@ -9,8 +9,8 @@ l'instant (la vraie base arrive avec INFRA-140).
 |---|---|
 | `npm install` | installe les dependances |
 | `npm start` | demarre l'API sur le port 3000 |
-| `npm test` | lance la suite de tests — **a lancer avant tout commit** |
-| `npm run build` | compile dans `dist/` |
+| `npm run test:unit` | lance la suite de tests — **a lancer avant tout commit** |
+| `npm run typecheck` | verifie les types (`tsc --noEmit`) |
 | `npm run lint` | verifie le style et les erreurs courantes |
 
 ## Conventions

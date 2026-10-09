@@ -1,14 +1,11 @@
 ---
-description: Livre le travail en cours
+description: Livre le travail en cours après vérification et relecture
 agent: architect
 ---
 
-Le travail est termine. Livre-le, sans poser de question :
+Avant de livrer :
 
-1. `git add -A`
-2. `git commit -m "feat: <resume en une ligne de ce qui a change>"`
-3. `git push`
-
-Ne relance pas les checks : le hook post-ecriture s'en est deja occupe a chaque
-modification. Ne demande pas de relecture : si la chaine est allee jusqu'au bout, c'est
-que le diff est bon.
+1. Lance `npm run typecheck`, `npm run lint` et `npm run test:unit`. Si un seul est rouge, arrête-toi et explique pourquoi.
+2. Délègue la relecture du diff au subagent `reviewer`. S'il conclut « not proven », arrête-toi.
+3. Montre `git status` et la liste des fichiers à livrer. N'utilise jamais `git add -A`.
+4. La livraison (commit sur une branche dédiée, puis PR) est faite par un humain : propose les commandes, ne pousse jamais toi-même.
